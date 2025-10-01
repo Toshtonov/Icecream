@@ -95,9 +95,8 @@ export default function Header() {
               onClick={() => setIsOpenn(!isOpenn)}
               className="hover:text-pink-500 transition cursor-pointer"
             >
-              shop
+              Blog
             </button>
-
             {isOpenn && (
               <div className="absolute bg-white shadow-lg rounded-md mt-2 w-32">
                 <Link
@@ -117,12 +116,10 @@ export default function Header() {
               </div>
             )}
           </div>
-
           <Link to={"/faq"}>
-            <p className="hover:text-pink-500 transition">FAQ's</p>
+            <p className="hover:text-pink-500 transition">Faq's</p>
           </Link>
         </nav>
-
         {/* Actions */}
         <div className="flex items-center gap-5">
           {/*  Search tugmasi */}

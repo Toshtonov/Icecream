@@ -11,7 +11,8 @@ Mazali muzqaymoqlar, chiroyli UI va qulay foydalanish imkoniyatini taqdim etadi.
 ---
 
 ## 📷 Ekran tasvirlari
-![App Screenshot](./src/images/singleblog-review2.png.png)
+![App Screenshot](./src/images/forReadme.png)
+![App Screenshot](./src/images/forReadme2.png)
 ---
 
 ## ⚙️ O‘rnatish
