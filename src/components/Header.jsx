@@ -1,4 +1,4 @@
-import { Search, ShoppingBag , ArrowRight } from "lucide-react";
+import { Search, ShoppingBag, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
@@ -160,10 +160,10 @@ export default function Header() {
           </Link>
 
           <Link to={"/Contact"}>
-  <button className="hidden md:flex items-center gap-2 px-10 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md hover:opacity-90 transition">
-    Contact Us <ArrowRight className="w-4 h-4" />
-  </button>
-</Link>
+            <button className="hidden md:flex items-center gap-2 px-10 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md hover:opacity-90 transition">
+              Contact Us <ArrowRight className="w-4 h-4" />
+            </button>
+          </Link>
 
         </div>
       </div>

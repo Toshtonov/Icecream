@@ -2,13 +2,15 @@ import { Link } from "react-router-dom";
 
 export default function Checkout() {
   return (
-    <div className="max-w-4xl mx-auto py-12 px-6">
-      <h1 className="text-3xl font-bold mb-8">Checkout</h1>
+    <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-8 text-center md:text-left">
+        Checkout
+      </h1>
 
-      <form className="space-y-6 bg-white p-8 rounded-xl shadow-md">
+      <form className="space-y-6 bg-white p-6 sm:p-8 rounded-xl shadow-md">
         {/* Personal Info */}
         <div>
-          <h2 className="text-xl font-semibold mb-4">Billing Details</h2>
+          <h2 className="text-lg sm:text-xl font-semibold mb-4">Billing Details</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <input
               type="text"
@@ -45,38 +47,24 @@ export default function Checkout() {
 
         {/* Payment Info */}
         <div>
-          <h2 className="text-xl font-semibold mb-4">Payment Method</h2>
+          <h2 className="text-lg sm:text-xl font-semibold mb-4">Payment Method</h2>
           <select className="border rounded-lg px-4 py-2 w-full">
             <option value="card">Credit/Debit Card</option>
             <option value="paypal">PayPal</option>
             <option value="cash">Cash on Delivery</option>
           </select>
         </div>
-                 <Link
-                  to={'/ThankYou'}
-                  className="block px-4 py-2 hover:bg-pink-50"
-                  onClick={() => setIsOpen(false)}
-                >        <button
-          type="submit"
-          className="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white py-3 rounded-lg font-semibold hover:opacity-90 "
-        >
-          Place Order
-        </button></Link>
+
         {/* Place Order */}
-        
+        <Link to="/ThankYou" className="block">
+          <button
+            type="submit"
+            className="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white py-3 rounded-lg font-semibold hover:opacity-90 transition"
+          >
+            Place Order
+          </button>
+        </Link>
       </form>
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-

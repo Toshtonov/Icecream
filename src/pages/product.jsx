@@ -4,19 +4,17 @@ import { Star, ShoppingCart } from "lucide-react";
 import { CartContext } from "../context/CartContext";
 
 export default function Product() {
-  const { state: product } = useLocation(); // navigate orqali kelgan product
+  const { state: product } = useLocation();
   const { setCart } = useContext(CartContext);
 
   const defaultImage = "/src/images/prodect-1.png";
   const defaultPrice = product?.newPrice || product?.price || 0;
 
-  // ✅ Bosilgan card rasmi asosiy qilib qo‘yildi
   const [mainPrice, setMainPrice] = useState(defaultPrice);
   const [mainImage, setMainImage] = useState(product?.img || defaultImage);
 
-  // ✅ Thumbnailsda 0-chi index bo‘lib bosilgan card rasmi chiqadi
   const thumbnails = [
-    { img: product?.img || defaultImage, price: defaultPrice }, // 🔑 carddan kelgan rasm
+    { img: product?.img || defaultImage, price: defaultPrice },
     { img: "/src/images/prodect-1.png", price: 6.99 },
     { img: "/src/images/prodect-2.png", price: 7.49 },
     { img: "/src/images/prodect-3.png", price: 8.0 },
@@ -35,11 +33,11 @@ export default function Product() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto py-12 px-6 flex flex-col md:flex-row gap-10">
+    <div className="max-w-6xl mx-auto py-10 px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row gap-10">
       {/* Chap tarafdagi rasmlar */}
-      <div className="flex flex-col md:flex-row gap-6">
+      <div className="flex flex-col md:flex-row gap-6 w-full md:w-1/2">
         {/* Kichkina rasmlar */}
-        <div className="flex md:flex-col gap-3">
+        <div className="flex md:flex-col gap-3 justify-center md:justify-start">
           {thumbnails.map((thumb, i) => (
             <img
               key={i}
@@ -49,8 +47,10 @@ export default function Product() {
                 setMainImage(thumb.img);
                 setMainPrice(thumb.price);
               }}
-              className={`w-20 h-20 object-contain rounded-lg cursor-pointer border transition ${
-                mainImage === thumb.img ? "border-pink-500" : "border-gray-300"
+              className={`w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-lg cursor-pointer border transition ${
+                mainImage === thumb.img
+                  ? "border-pink-500"
+                  : "border-gray-300"
               }`}
             />
           ))}
@@ -61,15 +61,19 @@ export default function Product() {
           <img
             src={mainImage}
             alt={product?.name || "Product image"}
-            className="w-[400px] h-[400px] object-contain rounded-xl shadow-md bg-white"
+            className="w-64 h-64 sm:w-80 sm:h-80 md:w-[400px] md:h-[400px] object-contain rounded-xl shadow-md bg-white"
           />
         </div>
       </div>
 
       {/* O‘ng tarafdagi ma’lumotlar */}
       <div className="flex-1 flex flex-col gap-5">
-        <h1 className="text-3xl font-bold">{product?.name || "No name"}</h1>
-        <p className="text-gray-600">{product?.description || product?.desc}</p>
+        <h1 className="text-2xl sm:text-3xl font-bold">
+          {product?.name || "No name"}
+        </h1>
+        <p className="text-gray-600 text-sm sm:text-base">
+          {product?.description || product?.desc}
+        </p>
 
         {/* Reyting */}
         <div className="flex items-center gap-2">
@@ -80,12 +84,14 @@ export default function Product() {
         </div>
 
         {/* Narx */}
-        <p className="text-2xl font-bold text-pink-600">${mainPrice}</p>
+        <p className="text-xl sm:text-2xl font-bold text-pink-600">
+          ${mainPrice}
+        </p>
 
         {/* Add to Cart */}
         <button
           onClick={addToCart}
-          className="flex items-center gap-2 bg-pink-500 text-white px-6 py-3 rounded-full hover:bg-pink-600 transition w-fit"
+          className="flex items-center justify-center gap-2 bg-pink-500 text-white px-6 py-3 rounded-full hover:bg-pink-600 transition w-full sm:w-fit"
         >
           <ShoppingCart size={20} /> Add to Cart
         </button>

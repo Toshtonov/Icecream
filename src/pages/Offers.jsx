@@ -82,16 +82,16 @@ export default function Offers() {
   const currentProducts = products.slice(startIndex, startIndex + itemsPerPage);
 
   return (
-    <section className="py-12 px-6 text-center  w-[90%] m-auto rounded-xl">
-      <h2 className="text-3xl font-bold mb-2 ">
+    <section className="py-12 px-4 sm:px-6 lg:px-12 text-center w-full max-w-7xl mx-auto">
+      <h2 className="text-2xl sm:text-3xl font-bold mb-2">
         Upto <span className="text-pink-500">30%</span> Discount
       </h2>
-      <p className="text-gray-700 mb-10">
+      <p className="text-gray-700 mb-10 text-sm sm:text-base max-w-2xl mx-auto">
         Discover the favorites that keep our customers coming back for more.
       </p>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {currentProducts.map((product) => (
           <div
             key={product.id}
@@ -104,7 +104,7 @@ export default function Offers() {
             <img
               src={product.image}
               alt={product.name}
-              className="h-40 w-full object-contain mb-4"
+              className="h-40 sm:h-48 lg:h-56 w-full object-contain mb-4"
             />
 
             {/* Like button */}
@@ -128,7 +128,7 @@ export default function Offers() {
             <p className="text-gray-500 text-sm mb-2">{product.description}</p>
 
             <div className="flex items-center justify-center gap-1 text-yellow-500 text-sm mb-2">
-              <Star />
+              <Star size={16} />
               <span>{product.rating}/5</span>
             </div>
 
@@ -150,7 +150,7 @@ export default function Offers() {
               </p>
               <button
                 onClick={() => addToCart(product)}
-                className="p-3 rounded-full bg-[#683292] text-white hover:bg-pink-600 cursor-pointer"
+                className="p-3 rounded-full bg-[#683292] text-white hover:bg-pink-600 transition"
               >
                 <ShoppingCart size={18} />
               </button>
@@ -160,13 +160,13 @@ export default function Offers() {
       </div>
 
       {/* Pagination Dots */}
-      <div className="flex justify-center mt-8 gap-2">
+      <div className="flex justify-center mt-8 gap-3">
         {[0, 1].map((dot) => (
           <span
             key={dot}
             onClick={() => setActiveDot(dot)}
             className={`w-3 h-3 rounded-full cursor-pointer transition ${
-              activeDot === dot ? "bg-pink-500" : "bg-gray-300"
+              activeDot === dot ? "bg-pink-500 scale-110" : "bg-gray-300"
             }`}
           ></span>
         ))}

@@ -1,23 +1,21 @@
 import { useState } from "react";
 import { Search, MessageCircle, Heart, Share2 } from "lucide-react";
 
-// BlogSingle.jsx
 export default function BlogSingle() {
- const comments = [
-  {
-    id: 1,
-    name: "Roseane Williams",
-    text: "Lorem ipsum dolor sit amet...",
-    image: "src/images/singleblog-review1.png", 
-  },
-  {
-    id: 2,
-    name: "Sarasha Noria",
-    text: "Lorem ipsum dolor sit amet...",
-    image: "src/images/singleblog-review2.png", 
-  },
-];
-
+  const [comments, setComments] = useState([
+    {
+      id: 1,
+      name: "Roseane Williams",
+      text: "Lorem ipsum dolor sit amet...",
+      image: "src/images/singleblog-review1.png",
+    },
+    {
+      id: 2,
+      name: "Sarasha Noria",
+      text: "Lorem ipsum dolor sit amet...",
+      image: "src/images/singleblog-review2.png",
+    },
+  ]);
 
   const [newComment, setNewComment] = useState("");
 
@@ -27,7 +25,7 @@ export default function BlogSingle() {
 
     setComments([
       ...comments,
-      { id: Date.now(), name: "You", text: newComment },
+      { id: Date.now(), name: "You", text: newComment, image: "src/images/297.png" },
     ]);
     setNewComment("");
   };
@@ -42,11 +40,11 @@ export default function BlogSingle() {
           className="rounded-lg w-full object-cover"
         />
 
-        <h1 className="text-3xl font-bold">
+        <h1 className="text-2xl md:text-3xl font-bold">
           Why You Need Virtual Assistant for Your Company
         </h1>
         <p className="text-gray-500 text-sm">
-          📅 Sep 20, 2023 • 👤 Admin • 💬 2 Comments
+          📅 Sep 20, 2023 • 👤 Admin • 💬 {comments.length} Comments
         </p>
 
         <p className="text-gray-700 leading-relaxed">
@@ -72,7 +70,7 @@ export default function BlogSingle() {
 
         {/* Tags + Social */}
         <div className="flex flex-wrap justify-between items-center border-t pt-4">
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap">
             {["Business", "Articles", "Design"].map((tag) => (
               <span
                 key={tag}
@@ -82,7 +80,7 @@ export default function BlogSingle() {
               </span>
             ))}
           </div>
-          <div className="flex gap-3 text-gray-500">
+          <div className="flex gap-3 text-gray-500 mt-3 lg:mt-0">
             <Share2 className="w-5 h-5 cursor-pointer hover:text-pink-500" />
             <Heart className="w-5 h-5 cursor-pointer hover:text-pink-500" />
             <MessageCircle className="w-5 h-5 cursor-pointer hover:text-pink-500" />
@@ -90,13 +88,13 @@ export default function BlogSingle() {
         </div>
 
         {/* Author Box */}
-        <div className="bg-pink-100 p-6 rounded-xl flex items-center gap-4">
+        <div className="bg-pink-100 p-6 rounded-xl flex flex-col sm:flex-row items-center gap-4">
           <img
             src="src/images/297.png"
             alt="Author"
             className="w-16 h-16 rounded-full object-cover"
           />
-          <div>
+          <div className="text-center sm:text-left">
             <h4 className="font-semibold">Billy Watson</h4>
             <p className="text-gray-600 text-sm">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
@@ -106,25 +104,23 @@ export default function BlogSingle() {
         </div>
 
         {/* Comments */}
-        <h3 className="text-xl font-bold">💬 {comments.length} Comments</h3>
-<div className="space-y-6">
-  {comments.map((c) => (
-    <div key={c.id} className="flex gap-4 items-start">
-      <img
-        src="src/images/singleblog-review2.png.png" 
-        alt={c.name}
-        className="w-12 h-12 rounded-full object-cover"
-      />
-         
-      <div>
-        <h4 className="font-semibold">{c.name}</h4>
-        <p className="text-gray-600">{c.text}</p>
-        <button className="text-sm text-pink-500 mt-1">Reply</button>
-      </div>
-    </div>
-  ))}
-</div>
-
+        <h3 className="text-lg md:text-xl font-bold">💬 {comments.length} Comments</h3>
+        <div className="space-y-6">
+          {comments.map((c) => (
+            <div key={c.id} className="flex gap-4 items-start">
+              <img
+                src={c.image}
+                alt={c.name}
+                className="w-12 h-12 rounded-full object-cover"
+              />
+              <div>
+                <h4 className="font-semibold">{c.name}</h4>
+                <p className="text-gray-600">{c.text}</p>
+                <button className="text-sm text-pink-500 mt-1">Reply</button>
+              </div>
+            </div>
+          ))}
+        </div>
 
         {/* Comment Form */}
         <form

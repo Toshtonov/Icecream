@@ -45,9 +45,9 @@ export default function Columnsidebar() {
   );
 
   return (
-    <div className="flex  w-[70%] m-auto  min-h-screen p-8 gap-8">
+    <div className="flex flex-col lg:flex-row max-w-7xl mx-auto min-h-screen p-6 lg:p-8 gap-8">
       {/* Left side - posts */}
-      <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6 flex-1">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 flex-1">
         {filteredPosts.length > 0 ? (
           filteredPosts.map((post, i) => (
             <div
@@ -57,7 +57,7 @@ export default function Columnsidebar() {
               <img
                 src={post.img}
                 alt={post.title}
-                className="rounded-lg mb-3"
+                className="rounded-lg mb-3 w-full object-cover"
               />
               <h3 className="font-semibold text-lg mb-2">{post.title}</h3>
               <p className="text-gray-600 text-sm mb-3">{post.desc}</p>
@@ -65,7 +65,6 @@ export default function Columnsidebar() {
                 <div className="flex items-center gap-2 text-gray-500 text-xs">
                   <Calendar size={14} /> {post.date}
                 </div>
-
               </div>
             </div>
           ))
@@ -77,7 +76,7 @@ export default function Columnsidebar() {
       </div>
 
       {/* Right side - sidebar */}
-      <aside className="w-80 space-y-6">
+      <aside className="w-full lg:w-80 space-y-6">
         {/* Search */}
         <div className="bg-white shadow rounded-2xl p-4 flex items-center gap-2">
           <input

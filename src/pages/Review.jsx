@@ -1,14 +1,12 @@
 import { useState } from "react";
-import { Quote, Star } from "lucide-react";
+import { Star } from "lucide-react";
 
 // Card Component
 export function Card({ children, className }) {
   return (
-    
     <div
       className={`rounded-2xl bg-white shadow-md hover:shadow-lg transition-all duration-300 p-6 ${className}`}
     >
-        
       {children}
     </div>
   );
@@ -18,7 +16,7 @@ export function CardContent({ children, className }) {
   return <div className={`space-y-4 ${className}`}>{children}</div>;
 }
 
-// Testimonial Data (9 ta misol uchun)
+// Testimonial Data
 const testimonials = [
   { name: "Kevin Andrew", title: "Happy Client", image: "https://randomuser.me/api/portraits/men/32.jpg", text: "Quisquam est qui dolorem ipsum quia dolor sit amet..." },
   { name: "Peri James", title: "Happy Client", image: "https://randomuser.me/api/portraits/women/44.jpg", text: "Ruisuam est qui dolorem ipsum quia dolor sit amet..." },
@@ -32,37 +30,32 @@ const testimonials = [
 ];
 
 export default function Review() {
-    
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // nechta sahifa borligini aniqlaymiz
   const itemsPerPage = 3;
   const totalPages = Math.ceil(testimonials.length / itemsPerPage);
 
-  // faqat active sahifadagi 3 ta itemni chiqaramiz
   const visibleTestimonials = testimonials.slice(
     activeIndex * itemsPerPage,
     activeIndex * itemsPerPage + itemsPerPage
   );
 
   return (
-    
     <section className="py-16 bg-white">
       <div className="text-center mb-12">
-                    <section className="w-full flex flex-col items-center justify-center py-50 bg-gradient-to-r from-pink-100 via-white to-blue-100">
-                {/* Title */}
-                <h1 className="text-4xl md:text-5xl font-bold text-black font-serif mb-6">
-                 review
-                </h1>
+        {/* Header */}
+        <section className="w-full flex flex-col items-center justify-center py-10 bg-gradient-to-r from-pink-100 via-white to-blue-100">
+          <h1 className="text-4xl md:text-5xl font-bold text-black font-serif mb-6">
+            Review
+          </h1>
+          <div className="flex items-center gap-2 bg-white px-6 py-2 rounded-full shadow-md">
+            <span className="text-pink-500 font-medium">Home</span>
+            <span className="text-gray-400">/</span>
+            <span className="text-gray-600">review</span>
+          </div>
+        </section>
 
-                {/* Breadcrumb */}
-                <div className="flex items-center gap-2 bg-white px-6 py-2 rounded-full shadow-md">
-                    <span className="text-pink-500 font-medium">Home</span>
-                    <span className="text-gray-400">/</span>
-                    <span className="text-gray-600">review</span>
-                </div>
-            </section>
-        <h2 className="text-4xl font-bold text-gray-900">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-8">
           Hear From Our <span className="text-pink-500">Gelato</span> Enthusiasts
         </h2>
         <p className="text-gray-500 mt-4">
@@ -70,12 +63,11 @@ export default function Review() {
         </p>
       </div>
 
-      {/* 3 ta card qator bo‘lib chiqadi */}
-      <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
+      {/* Responsive Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
         {visibleTestimonials.map((item, index) => (
-          <Card key={index} className="w-80">
+          <Card key={index}>
             <CardContent>
-                <h1 className="text-3xl font-light">66</h1>
               <p className="text-gray-600 text-sm">{item.text}</p>
               <div className="flex items-center gap-3 mt-4">
                 <img
