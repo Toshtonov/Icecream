@@ -8,7 +8,7 @@ import NotFound from "./pages/NotFound";
 import CartProvider from "./context/CartContext";
 import  ShoppingCart from "./pages/ShoppingCart";
 import Ourteam from "./pages/Ourteam";
-import Review from "./pages/review";
+import Review from "./pages/Review";
 import ShopPage from "./pages/SHop-layoute";
 import Checkout from "./pages/CHecout";
 import Offers from "./pages/Offers";
