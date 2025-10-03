@@ -30,7 +30,7 @@ const categories = [
   { title: "Seasonal Flavors", img: Flavors },
 ];
 import Shadowicecream from "../images/shadow-icecreamchik.png"
-
+import Shadowimg from "../images/shadowimg.png"
 export default function Home() {
   // product
   const products = [
@@ -139,7 +139,7 @@ export default function Home() {
 
           <div className="mt-10 md:mt-0 md:ml-10">
             <img
-              src="src/images/shadowimg.png"
+              src={Shadowimg}
               className="w-64 md:w-[420px] drop-shadow-2xl mx-auto"
             />
           </div>
