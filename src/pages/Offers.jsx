@@ -3,6 +3,13 @@ import { Heart, ShoppingCart, Star } from "lucide-react";
 import { CartContext } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
 
+// 📌 Rasmlarni import qilib oldik
+import SundaeImg from "../images/41.png";
+import ConeImg from "../images/isecream.png";
+import RockyImg from "../images/icecream2.png";
+import PeachImg from "../images/icecreaqm3.png";
+import MangoImg from "../images/22.png";
+
 const products = [
   {
     id: 1,
@@ -11,7 +18,7 @@ const products = [
     oldPrice: 12.99,
     newPrice: 5.99,
     rating: 4.8,
-    image: "src/images/41.png",
+    image: SundaeImg,
   },
   {
     id: 2,
@@ -20,7 +27,7 @@ const products = [
     oldPrice: 13.99,
     newPrice: 4.49,
     rating: 4.8,
-    image: "src/images/isecream.png",
+    image: ConeImg,
   },
   {
     id: 3,
@@ -29,7 +36,7 @@ const products = [
     oldPrice: 14.99,
     newPrice: 5.69,
     rating: 4.8,
-    image: "src/images/icecream2.png",
+    image: RockyImg,
   },
   {
     id: 4,
@@ -38,7 +45,7 @@ const products = [
     oldPrice: 16.99,
     newPrice: 5.39,
     rating: 4.8,
-    image: "src/images/icecreaqm3.png",
+    image: PeachImg,
   },
   {
     id: 5,
@@ -47,7 +54,7 @@ const products = [
     oldPrice: 10.99,
     newPrice: 4.29,
     rating: 4.7,
-    image: "src/images/icecream5.png",
+    image: MangoImg,
   },
 ];
 

@@ -5,7 +5,8 @@ import {
   Facebook,
   Instagram,
 } from "lucide-react";
-
+import Deacarationimg from "../images/deacaration.png"
+import Logoimg from "../images/Group1(1).png"
 export default function Footer() {
   return (
     <div className="bg-[#683292] relative text-[#CFB6E2]">
@@ -13,7 +14,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Logo */}
         <div className="flex flex-col items-start">
-          <img src="src/images/Group 1 (1).png" alt="Logo" className="w-32" />
+          <img src={Logoimg} alt="Logo" className="w-32" />
         </div>
 
         {/* Navigation */}
@@ -84,7 +85,7 @@ export default function Footer() {
 
       {/* Background image (absolute) */}
       <img
-        src="src/images/977b0075aff18e92a704e7c5b3f4e5bb61216844.png"
+        src={Deacarationimg}
         className="absolute left-0 bottom-0 w-40 opacity-50"
         alt="Decoration"
       />

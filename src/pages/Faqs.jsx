@@ -1,5 +1,13 @@
 import { ArrowRight } from "lucide-react";
 
+// Rasmlarni import qilish
+import img361 from "../images/361.png";
+import img359 from "../images/359.png";
+import img360 from "../images/360.png";
+import img362 from "../images/362.png";
+import imgRound from "../images/round.png";
+import imgTringl from "../images/tringl.png";
+
 export default function Faq() {
   const faqs = [
     "Do you offer dairy-free or vegan options?",
@@ -38,7 +46,7 @@ export default function Faq() {
         <div className="relative z-10 w-[90%] lg:w-[70%] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
           {/* Left Ice Cream */}
           <img
-            src="src/images/361.png"
+            src={img361}
             alt="ice cream left"
             className="w-48 sm:w-72 lg:w-80"
           />
@@ -46,7 +54,7 @@ export default function Faq() {
           {/* Decorative image */}
           <img
             className="absolute hidden sm:block left-[15%] top-[20%] w-16 lg:w-24"
-            src="src/images/359.png"
+            src={img359}
             alt=""
           />
 
@@ -69,13 +77,13 @@ export default function Faq() {
           {/* Decorative image */}
           <img
             className="absolute hidden sm:block right-[20%] bottom-[15%] w-16 lg:w-24"
-            src="src/images/360.png"
+            src={img360}
             alt=""
           />
 
           {/* Right Ice Cream */}
           <img
-            src="src/images/362.png"
+            src={img362}
             alt="ice cream right"
             className="w-48 sm:w-72 lg:w-80"
           />
@@ -118,12 +126,12 @@ export default function Faq() {
 
         {/* Background shapes */}
         <img
-          src="src/images/round.png"
+          src={imgRound}
           className="absolute hidden sm:block left-[10%] bottom-[15%] w-16 lg:w-24"
           alt=""
         />
         <img
-          src="src/images/tringl.png"
+          src={imgTringl}
           className="absolute hidden sm:block right-[10%] top-[15%] w-16 lg:w-24"
           alt=""
         />

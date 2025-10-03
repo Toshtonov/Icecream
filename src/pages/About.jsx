@@ -2,12 +2,17 @@ import {
   ArrowRight,
   MoveLeft as ChevronLeft,
   MoveRight as ChevronRight,
+  Frown,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import girlsIcecream from "../images/girls-icecream.png";
-export default function AboutHeader() {
- 
+import Loveicecream from "../images/love-icecream.png"
+import Righticecream from "../images/right-12.png"
+import MissionImg from "../images/mission-wave.png.png"
+import MissionTringle from "../images/mission-triangle.png.png"
+import MissionCros from "../images/mission-cross.png.png"
 
+export default function AboutHeader() {
   return (
     <div>
       <section className="w-full flex flex-col items-center justify-center py-20 bg-gradient-to-r from-pink-100 via-white to-blue-100">
@@ -25,7 +30,7 @@ export default function AboutHeader() {
       <div className="mt-[5%] mb-[5%]">
         <div className="w-[70%] flex justify-center items-center m-auto">
           <div className="w-[90%]">
-            <img src="src/images/love-icecream.png" alt="love icecream" />
+            <img src={Loveicecream} alt="love icecream" />
           </div>
           <div className="ml-[10%]">
             <h1 className="text-5xl font-bold w-[80%] mb-5">
@@ -51,7 +56,7 @@ export default function AboutHeader() {
           </div>
           <img
             className="absolute right-0"
-            src="src/images/right-icecream.png"
+            src={Righticecream}
             alt="right icecream"
           />
         </div>
@@ -61,12 +66,12 @@ export default function AboutHeader() {
         <div className="w-[75%] flex justify-end">
           <div className="m-auto items-center relative">
             <img
-              src="src/images/mission-triangle.png.png"
+              src={MissionTringle}
               className="absolute left-[10%] mt-[3%]"
               alt="triangle"
             />
             <img
-              src="src/images/mission-cross.png.png"
+              src={MissionCros}
               className="absolute left-[8%] mt-[11%]"
               alt="cross"
             />
@@ -83,7 +88,7 @@ export default function AboutHeader() {
               Read More <ArrowRight size={15} />
             </button>
             <img
-              src="src/images/mission-wave.png.png"
+              src={MissionImg}
               className="absolute right-[30%] mt-[-3%]"
               alt="wave"
             />

@@ -1,5 +1,17 @@
 import { useState } from "react";
 
+// 📌 Rasmlar import
+import Img276 from "../images/276.png";
+import Img277 from "../images/277.png";
+import Img278 from "../images/278.png";
+import Img279 from "../images/279 (1).png";
+import Img280 from "../images/280.png";
+import Img281 from "../images/281.png";
+import Img282 from "../images/282.png";
+import Img283 from "../images/283.png";
+import Img284 from "../images/284 (1).png";
+import Img285 from "../images/285.png";
+
 const categories = [
   "All",
   "Articles",
@@ -14,61 +26,61 @@ const posts = [
     title: "Our strength: Your Business",
     date: "September 20, 2023",
     category: "Announcements",
-    img: "src/images/276.png",
+    img: Img276,
   },
   {
     title: "How's the Economy?",
     date: "September 18, 2023",
     category: "News",
-    img: "src/images/277.png",
+    img: Img277,
   },
   {
     title: "Our strength: Your Business",
     date: "September 17, 2023",
     category: "Articles",
-    img: "src/images/278.png",
+    img: Img278,
   },
   {
     title: "How's the Economy?",
     date: "September 16, 2023",
     category: "News",
-    img: "src/images/279 (1).png",
+    img: Img279,
   },
   {
     title: "How's the Economy?",
     date: "September 15, 2023",
     category: "Announcements",
-    img: "src/images/280.png",
+    img: Img280,
   },
   {
     title: "How's the Economy?",
     date: "September 14, 2023",
     category: "Development",
-    img: "src/images/281.png",
+    img: Img281,
   },
   {
     title: "Our strength: Your Business",
     date: "September 13, 2023",
     category: "Consultation",
-    img: "src/images/282.png",
+    img: Img282,
   },
   {
     title: "Our strength: Your Business",
     date: "September 12, 2023",
     category: "Development",
-    img: "src/images/283.png",
+    img: Img283,
   },
   {
     title: "Our strength: Your Business",
     date: "September 11, 2023",
     category: "News",
-    img: "src/images/284 (1).png",
+    img: Img284,
   },
   {
     title: "Our strength: Your Business",
     date: "September 10, 2023",
     category: "Articles",
-    img: "src/images/285.png",
+    img: Img285,
   },
 ];
 

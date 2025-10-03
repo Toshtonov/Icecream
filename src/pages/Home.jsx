@@ -17,12 +17,19 @@ import bs4 from "../images/prodect-4.png";
 import { CartContext } from "../context/CartContext";
 import { useContext, useState } from "react";
 
+
+import Sundes from "../images/sundes.png";
+import Cones from "../images/cones.png";
+import Milkshakes from "../images/mikshakes.png";
+import Flavors from "../images/flavers.png";
+
 const categories = [
-  { title: "Sundaes", img: "src/images/sundes.png" },
-  { title: "Ice Cream Cones", img: "src/images/cones.png" },
-  { title: "Milkshakes", img: "src/images/mikshakes.png" },
-  { title: "Seasonal Flavors", img: "src/images/flavers.png" },
+  { title: "Sundaes", img: Sundes },
+  { title: "Ice Cream Cones", img: Cones },
+  { title: "Milkshakes", img: Milkshakes },
+  { title: "Seasonal Flavors", img: Flavors },
 ];
+import Shadowicecream from "../images/shadow-icecreamchik.png"
 
 export default function Home() {
   // product
@@ -111,7 +118,7 @@ export default function Home() {
       {/* Hero section */}
       <div className="flex justify-center bg-amber-50 relative overflow-hidden">
         <img
-          src="src/images/shadow-icecreamchik.png"
+          src={Shadowicecream}
           alt=""
           className="hidden md:block absolute left-0 top-10 w-40 md:w-60"
         />

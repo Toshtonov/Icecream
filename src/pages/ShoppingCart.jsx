@@ -2,11 +2,25 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
 
+// 🔽 Rasmlarni import qilib qo'yamiz
+import sundes from "../images/sundes.png";
+import cones from "../images/cones.png";
+import milkshakes from "../images/mikshakes.png";
+import flavors from "../images/flavers.png";
+
 export default function Cart() {
   const { cart } = useContext(CartContext);
 
   // umumiy summa
   const total = cart.reduce((acc, item) => acc + item.price, 0);
+
+  // cart elementlariga img manzillarni bog‘lab beramiz
+  const imageMap = {
+    sundes,
+    cones,
+    milkshakes,
+    flavors,
+  };
 
   return (
     <div className="max-w-6xl mx-auto py-10 px-4 md:px-6">
@@ -28,7 +42,7 @@ export default function Cart() {
                 {/* Product info */}
                 <div className="flex items-center gap-4">
                   <img
-                    src={item.img}
+                    src={imageMap[item.img]} // 🔽 cartdagi img key orqali chaqiriladi
                     alt={item.name}
                     className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-lg border"
                   />
