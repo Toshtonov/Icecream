@@ -29,7 +29,7 @@ export default function Testimonials() {
     <section className="bg-gradient-to-r from-pink-50 to-blue-50 py-20 relative overflow-hidden">
       <div className="text-center max-w-3xl mx-auto px-6">
         {/* Title */}
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 font-['Berkshire_Swash']">
           Hear from Our <span className="text-pink-500">Happy</span>{" "}
           <span className="text-purple-600">Ice Cream</span> Lovers
         </h2>

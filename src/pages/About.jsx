@@ -33,7 +33,7 @@ export default function AboutHeader() {
             <img src={Loveicecream} alt="love icecream" />
           </div>
           <div className="ml-[10%]">
-            <h1 className="text-5xl font-bold w-[80%] mb-5">
+            <h1 className="font-['Berkshire_Swash'] text-5xl font-bold w-[80%] mb-5">
               Our <span className="text-red-500">Journey</span> Began
               With a Simple Dream
             </h1>
@@ -75,7 +75,7 @@ export default function AboutHeader() {
               className="absolute left-[8%] mt-[11%]"
               alt="cross"
             />
-            <h1 className="text-5xl w-[50%] text-white mb-[5%]">
+            <h1 className="text-5xl w-[50%] text-white mb-[5%] font-['Berkshire_Swash']">
               Our Mission is to Create Moments
             </h1>
             <p className="text-white w-[50%] mb-[5%]">
@@ -101,7 +101,7 @@ export default function AboutHeader() {
 
       <div className="mt-[5%] mb-[5%]">
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-5xl mb-2">
+          <h1 className="text-5xl mb-2 font-['Berkshire_Swash']">
             Our <span className="text-[#F83D8E]">Statistics</span>
           </h1>
           <p>What makes us special through our impressive statistics.</p>

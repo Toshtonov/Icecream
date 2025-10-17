@@ -24,7 +24,7 @@ export default function Cart() {
 
   return (
     <div className="max-w-6xl mx-auto py-10 px-4 md:px-6">
-      <h1 className="text-3xl md:text-4xl font-bold mb-8 text-gray-800">
+      <h1 className="text-3xl md:text-4xl font-['Berkshire_Swash'] mb-8 text-gray-800">
         🛒 Your Cart
       </h1>
 
@@ -65,7 +65,7 @@ export default function Cart() {
           </div>
 
           {/* Summary */}
-          <div className="bg-white p-5 md:p-6 rounded-xl shadow-md h-fit">
+          <div className="bg-white p-5 md:p-6 rounded-xl shadow-md h-fit font-['Berkshire_Swash']">
             <h2 className="text-lg md:text-xl font-bold mb-4">
               Order Summary
             </h2>

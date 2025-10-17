@@ -90,7 +90,7 @@ export default function Offers() {
 
   return (
     <section className="py-12 px-4 sm:px-6 lg:px-12 text-center w-full max-w-7xl mx-auto">
-      <h2 className="text-2xl sm:text-3xl font-bold mb-2">
+      <h2 className="text-2xl sm:text-3xl font-bold mb-2 font-['Berkshire_Swash']">
         Upto <span className="text-pink-500">30%</span> Discount
       </h2>
       <p className="text-gray-700 mb-10 text-sm sm:text-base max-w-2xl mx-auto">

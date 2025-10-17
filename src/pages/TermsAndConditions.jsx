@@ -7,7 +7,7 @@ export default function TermsAndConditions() {
         
         {/* Header Section */}
         <header className="bg-gradient-to-r from-pink-100 via-white to-blue-100 p-8 sm:p-12 border-b">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 font-['Berkshire_Swash']">
             Terms and Conditions
           </h1>
           <p className="text-sm sm:text-base text-gray-600 leading-relaxed">

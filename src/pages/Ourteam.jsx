@@ -74,7 +74,7 @@ export default function Ourteam() {
     <div>
       {/* Hero Section */}
       <section className="w-full flex flex-col items-center justify-center py-20 bg-gradient-to-r from-pink-100 via-white to-blue-100">
-        <h1 className="text-3xl md:text-5xl font-bold text-black font-serif mb-6 text-center">
+        <h1 className="text-3xl md:text-5xl font-bold text-black mb-6 text-center font-['Berkshire_Swash']">
           Our Team
         </h1>
         <div className="flex items-center gap-2 bg-white px-6 py-2 rounded-full shadow-md text-sm md:text-base">
@@ -86,7 +86,7 @@ export default function Ourteam() {
 
       {/* Team Section */}
       <section className="py-16 bg-white text-center px-4">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2">
+        <h2 className="text-2xl md:text-3xl font-bold mb-2 font-['Berkshire_Swash']">
           Our <span className="text-pink-500">Team</span> Members
         </h2>
         <p className="text-gray-500 mb-12 max-w-2xl mx-auto text-sm md:text-base">

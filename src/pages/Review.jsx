@@ -45,7 +45,7 @@ export default function Review() {
       <div className="text-center mb-12">
         {/* Header */}
         <section className="w-full flex flex-col items-center justify-center py-10 bg-gradient-to-r from-pink-100 via-white to-blue-100">
-          <h1 className="text-4xl md:text-5xl font-bold text-black font-serif mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-black mb-6 font-['Berkshire_Swash']">
             Review
           </h1>
           <div className="flex items-center gap-2 bg-white px-6 py-2 rounded-full shadow-md">
@@ -55,7 +55,7 @@ export default function Review() {
           </div>
         </section>
 
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-8 font-['Berkshire_Swash']">
           Hear From Our <span className="text-pink-500">Gelato</span> Enthusiasts
         </h2>
         <p className="text-gray-500 mt-4">

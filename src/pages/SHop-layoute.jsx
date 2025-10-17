@@ -45,7 +45,7 @@ export default function ShopPage() {
     <div>
       {/* Hero */}
       <section className="w-full flex flex-col items-center justify-center py-20 bg-gradient-to-r from-pink-100 via-white to-blue-100 text-center">
-        <h1 className="text-3xl md:text-5xl font-bold text-black font-serif mb-6">
+        <h1 className="text-3xl md:text-5xl font-bold text-black   mb-6 font-['Berkshire_Swash']">
           Shopping Page
         </h1>
         <div className="flex flex-wrap items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md text-sm">

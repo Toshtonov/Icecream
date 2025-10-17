@@ -31,6 +31,9 @@ const categories = [
 ];
 import Shadowicecream from "../images/shadow-icecreamchik.png"
 import Shadowimg from "../images/shadowimg.png"
+import girlimage from "../images/icecreamgirl.png"
+import Rightimg from "../images/right-12.png"
+import Summerspecial from "../images/summerspecial.png"
 export default function Home() {
   // product
   const products = [
@@ -114,37 +117,115 @@ export default function Home() {
   const [current, setCurrent] = useState(0);
 
   return (
-    <div>
+    <div className="">
       {/* Hero section */}
-      <div className="flex justify-center bg-amber-50 relative overflow-hidden">
+      <div className="relative bg-[#FFF8EE] overflow-hidden">
+        {/* Chap tomonda fon rasmi */}
         <img
           src={Shadowicecream}
           alt=""
-          className="hidden md:block absolute left-0 top-10 w-40 md:w-60"
+          className="hidden lg:block absolute left-0 top-10 w-40 lg:w-60 opacity-70"
         />
-        <main className="flex flex-col md:flex-row items-center justify-between py-12 md:py-20 max-w-7xl mx-auto gap-10 md:gap-20 px-4">
-          <div className="max-w-lg text-center md:text-left">
-            <p className="text-gray-600 mb-3">— Welcome to The</p>
-            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-              Discover <span className="text-pink-500">Sweet</span> Delights!
+
+        <main className="flex flex-col lg:flex-row items-center justify-between py-20 max-w-[1280px] mx-auto px-8 relative">
+          {/* Matn qismi */}
+          <div className="flex-1 text-center lg:text-left z-10">
+            <p className="text-gray-600 mb-3 text-lg">— Welcome to The</p>
+
+            <h1 className="font-berkshire text-gray-900 font-normal leading-[108px] text-[56px] md:text-[84px]">
+              Discover <span className="text-[#F83D8E]">Sweet</span> Delights!
             </h1>
-            <p className="text-gray-600 mb-8">
-              Relish the timeless taste of handcrafted ice cream, made with
-              passion and the finest ingredients.
+
+            <p className="text-gray-600 mt-6 mb-10 max-w-md mx-auto lg:mx-0 text-base leading-relaxed">
+              Relish the timeless taste of handcrafted ice cream, made with passion
+              and the finest ingredients.
             </p>
-            <button className="px-6 py-3 rounded-full bg-purple-600 text-white shadow-lg hover:bg-purple-700 transition">
+
+            <button className="px-8 py-4 rounded-full bg-[#683292] text-white font-medium shadow-lg hover:bg-purple-700 transition">
               Browse Our Classic Flavors →
             </button>
           </div>
 
-          <div className="mt-10 md:mt-0 md:ml-10">
+          {/* Rasm qismi */}
+          <div className="flex-1 flex justify-center lg:justify-end relative">
             <img
               src={Shadowimg}
-              className="w-64 md:w-[420px] drop-shadow-2xl mx-auto"
+              alt="Ice cream"
+              className="w-[500px] md:w-[620px] lg:w-[720px] drop-shadow-2xl translate-x-[-60px] lg:translate-x-[-80px]"
             />
           </div>
         </main>
+
+
       </div>
+
+      <section className="relative bg-white overflow-hidden py-16 md:py-24">
+        <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-12 relative z-10">
+
+          {/* Chap rasm qismi */}
+          <div className="relative flex justify-center md:w-1/2 mt-10 md:mt-0">
+            {/* Orqa fon doira */}
+            <div className="absolute w-[340px] h-[340px] bg-[#FFE4EE] rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0"></div>
+
+            {/* Rasmning o‘zi */}
+            <img
+              src={girlimage}
+              alt="Girl eating ice cream"
+              className="relative w-[320px] md:w-[380px] rounded-full z-10"
+            />
+
+            {/* Dekor — chap pastdagi pushti doira */}
+            <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-[#F83D8E] rounded-full flex items-center justify-center shadow-lg">
+              <div className="w-8 h-8 bg-white rounded-full"></div>
+            </div>
+          </div>
+
+          {/* O‘ng matn qismi */}
+          <div className="md:w-1/2 text-center md:text-left space-y-6 relative">
+            {/* Dekor — yuqori o‘ngdagi nuqtalar */}
+            <div className="absolute -top-6 right-16 grid grid-cols-4 gap-1 opacity-70">
+              {Array.from({ length: 12 }).map((_, i) => (
+                <div key={i} className="w-1.5 h-1.5 bg-pink-400 rounded-full" />
+              ))}
+            </div>
+
+            {/* Matn */}
+            <h1 className="text-4xl md:text-5xl font-['Berkshire_Swash'] font-bold text-gray-900 leading-tight">
+              Relive the Sweet <br />
+              Memories of Classic{" "}
+              <span className="text-[#F83D8E]">Ice Creams</span>
+            </h1>
+
+            <p className="text-gray-600 max-w-md mx-auto md:mx-0">
+              From rich chocolate fudge to creamy vanilla sundaes,
+              discover our menu of classic ice cream creations.
+            </p>
+
+            <button className="mt-4 px-8 py-3 bg-gradient-to-r from-[#F83D8E] to-[#FF5FB2] hover:opacity-90 text-white rounded-full shadow-md flex items-center gap-2 mx-auto md:mx-0 transition-all duration-300">
+              Explore Our Menu <ArrowRight size={18} />
+            </button>
+
+            {/* Dekor — o‘ngdagi qog‘oz samolyot */}
+            <svg
+              className="absolute right-0 top-12 w-10 h-10 text-pink-400 rotate-12"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M10.5 6h9m0 0l-9 9m9-9l-9 9m0 0L3 12l6.5-6"
+              />
+            </svg>
+          </div>
+        </div>
+
+        {/* Dekor — past o‘ngdagi yarim doira */}
+        <div className="absolute bottom-0 right-0 translate-x-1/3 translate-y-1/3 w-[200px] h-[200px] rounded-full border-[6px] border-pink-400"></div>
+      </section>
+
 
       {/* Cart sections */}
       <div className="w-full py-16 flex flex-col items-center justify-center bg-[linear-gradient(301.26deg,#EFD7EF_8%,#F5F9FC_43%,#F8EAE1_64%,#EAF8F9_87%)] relative overflow-hidden">
@@ -154,7 +235,7 @@ export default function Home() {
           alt=""
         />
         <div className="flex flex-col gap-3 px-4 w-full max-w-7xl">
-          <h1 className="text-3xl md:text-5xl font-bold text-center">
+          <h1 className="text-3xl md:text-5xl font-['Berkshire_Swash'] font-bold text-center">
             Our <span className="text-[#F83D8E]">Classic</span> Favorites
           </h1>
           <p className="text-sm text-[#646464] text-center">
@@ -217,7 +298,7 @@ export default function Home() {
 
       {/* Categories section */}
       <section className="py-12 bg-white text-center px-4">
-        <h2 className="text-3xl font-bold mb-2">
+        <h2 className="text-3xl font-['Berkshire_Swash'] font-bold mb-2">
           Explore Our <span className="text-pink-500">Categories</span>
         </h2>
         <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -246,11 +327,12 @@ export default function Home() {
           ))}
         </div>
       </section>
+   
 
       {/* Best sellers */}
       <section className="text-center py-12 px-4">
         <h2 className="text-3xl font-bold mb-2">
-          Our <span className="text-pink-500">Best</span> Sellers
+          Our <span className="text-pink-500 font-['Berkshire_Swash']">Best</span> Sellers
         </h2>
         <p className="text-gray-500 mb-8">
           Discover the favorites that keep our customers coming back for more.
@@ -280,9 +362,8 @@ export default function Home() {
                 {Array.from({ length: 5 }, (_, i) => (
                   <span
                     key={i}
-                    className={`${
-                      i < item.rating ? "text-yellow-400" : "text-gray-300"
-                    }`}
+                    className={`${i < item.rating ? "text-yellow-400" : "text-gray-300"
+                      }`}
                   >
                     ★
                   </span>
@@ -313,9 +394,8 @@ export default function Home() {
             <span
               key={i}
               onClick={() => setCurrent(i)}
-              className={`w-3 h-3 rounded-full cursor-pointer ${
-                current === i ? "bg-pink-500" : "bg-gray-300"
-              }`}
+              className={`w-3 h-3 rounded-full cursor-pointer ${current === i ? "bg-pink-500" : "bg-gray-300"
+                }`}
             ></span>
           ))}
         </div>
