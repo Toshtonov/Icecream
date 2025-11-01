@@ -31,7 +31,19 @@ export default function BlogSingle() {
   };
 
   return (
+    
     <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <section className="w-full flex flex-col items-center justify-center py-20 bg-gradient-to-r from-pink-100 via-white to-blue-100">
+        <h1 className="text-4xl md:text-5xl font-bold text-black font-serif mb-6">
+          About Us
+        </h1>
+
+        <div className="flex items-center gap-2 bg-white px-6 py-2 rounded-full shadow-md">
+          <span className="text-pink-500 font-medium">Home</span>
+          <span className="text-gray-400">/</span>
+          <span className="text-gray-600">About Us</span>
+        </div>
+      </section>
       {/* Left Content */}
       <div className="lg:col-span-2 space-y-8">
         <img

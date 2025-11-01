@@ -1,9 +1,9 @@
 import { Search, ShoppingBag, ArrowRight, Menu } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { CartContext } from "../context/CartContext";
 import Logo from "../images/Group1(1).png";
-import Mobilemenu from "../pages/Mobilemenu"; // ✅ To‘g‘ri import yo‘li
+import Mobilemenu from "../pages/Mobilemenu";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,37 +12,64 @@ export default function Header() {
   const [mobileMenu, setMobileMenu] = useState(false);
   const { cart } = useContext(CartContext);
 
+  const pagesRef = useRef(null);
+  const blogRef = useRef(null);
+  const searchRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (
+        pagesRef.current &&
+        !pagesRef.current.contains(e.target) &&
+        blogRef.current &&
+        !blogRef.current.contains(e.target) &&
+        searchRef.current &&
+        !searchRef.current.contains(e.target)
+      ) {
+        setIsOpen(false);
+        setIsOpenn(false);
+        setShowSearch(false);
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
+
   return (
     <>
       <header className="bg-white sticky top-0 z-50 shadow">
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-          {/* Logo */}
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+          {/* ✅ Chap tomonda - Logo */}
           <Link to={"/"}>
             <div className="flex items-center gap-2 cursor-pointer">
               <img src={Logo} alt="Logo" className="h-10 w-auto" />
             </div>
           </Link>
 
-          {/* Navbar (desktop) */}
-          <nav className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
+          {/* ✅ O‘rtada - Navigatsiya */}
+          <div className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
             <Link to={"/"}>
               <p className="hover:text-pink-500 transition">Home</p>
             </Link>
+
             <Link to={"/about"}>
               <p className="hover:text-pink-500 transition">About Us</p>
             </Link>
 
             {/* Pages dropdown */}
-            <div className="relative">
+            <div className="relative" ref={pagesRef}>
               <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="hover:text-pink-500 transition cursor-pointer"
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  setIsOpenn(false);
+                  setShowSearch(false);
+                }}
+                className="hover:text-pink-500 transition cursor-pointer flex items-center"
               >
                 Pages
               </button>
-
               {isOpen && (
-                <div className="absolute bg-white shadow-lg rounded-md mt-2 w-32">
+                <div className="absolute bg-white shadow-lg rounded-md mt-2 w-44">
                   <Link
                     to={"/Ourteam"}
                     className="block px-4 py-2 hover:bg-pink-50"
@@ -90,10 +117,14 @@ export default function Header() {
             </div>
 
             {/* Blog dropdown */}
-            <div className="relative">
+            <div className="relative" ref={blogRef}>
               <button
-                onClick={() => setIsOpenn(!isOpenn)}
-                className="hover:text-pink-500 transition cursor-pointer"
+                onClick={() => {
+                  setIsOpenn(!isOpenn);
+                  setIsOpen(false);
+                  setShowSearch(false);
+                }}
+                className="hover:text-pink-500 transition cursor-pointer flex items-center"
               >
                 Blog
               </button>
@@ -120,19 +151,22 @@ export default function Header() {
             <Link to={"/faq"}>
               <p className="hover:text-pink-500 transition">Faq's</p>
             </Link>
-          </nav>
+          </div>
 
-          {/* Actions */}
-          <div className="flex items-center gap-4 md:gap-5">
+          {/* ✅ O‘ng tomonda - Search, Cart, Contact */}
+          <div className="hidden md:flex items-center gap-6">
             {/* Search */}
-            <div className="flex items-center gap-3 relative">
+            <div className="relative flex items-center" ref={searchRef}>
               <button
-                onClick={() => setShowSearch(!showSearch)}
-                className="hidden md:flex items-center gap-2 text-gray-600 hover:text-pink-500 transition"
+                onClick={() => {
+                  setShowSearch(!showSearch);
+                  setIsOpen(false);
+                  setIsOpenn(false);
+                }}
+                className="flex items-center text-gray-600 hover:text-pink-500 transition"
               >
                 <Search size={20} />
               </button>
-
               {showSearch && (
                 <input
                   type="text"
@@ -145,7 +179,7 @@ export default function Header() {
 
             {/* Shopping Cart */}
             <Link to={"/shoppingcart"}>
-              <button className="relative">
+              <button className="relative flex items-center">
                 <ShoppingBag
                   size={22}
                   className="text-gray-600 hover:text-pink-500 transition"
@@ -158,25 +192,25 @@ export default function Header() {
               </button>
             </Link>
 
-            {/* Bars (Mobile menu) */}
-            <button
-              onClick={() => setMobileMenu(true)}
-              className="md:hidden text-gray-700 hover:text-pink-500 transition"
-            >
-              <Menu size={25} />
-            </button>
-
-            {/* Contact */}
+            {/* Contact Button */}
             <Link to={"/Contact"}>
-              <button className="hidden md:flex items-center gap-2 px-10 py-2 rounded-full bg-[#F83D8E] text-white shadow-md hover:opacity-90 transition">
+              <button className="flex items-center gap-2 px-6 py-2 rounded-full bg-[#F83D8E] text-white shadow-md hover:opacity-90 transition text-sm">
                 Contact Us <ArrowRight className="w-4 h-4" />
               </button>
             </Link>
           </div>
+
+          {/* ✅ Mobil menyu tugmasi */}
+          <button
+            onClick={() => setMobileMenu(true)}
+            className="md:hidden text-gray-700 hover:text-pink-500 transition"
+          >
+            <Menu size={25} />
+          </button>
         </div>
       </header>
 
-      {/* Mobile sidebar menu */}
+      {/* Mobile menu */}
       <Mobilemenu
         isOpen={mobileMenu}
         onClose={() => setMobileMenu(false)}

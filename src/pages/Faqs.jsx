@@ -20,6 +20,17 @@ export default function Faq() {
 
   return (
     <div className="w-full">
+         <section className="w-full flex flex-col items-center justify-center py-20 bg-gradient-to-r from-pink-100 via-white to-blue-100">
+        <h1 className="text-4xl md:text-5xl font-bold text-black font-serif mb-6">
+         Faq's
+        </h1>
+
+        <div className="flex items-center gap-2 bg-white px-6 py-2 rounded-full shadow-md">
+          <span className="text-pink-500 font-medium">Home</span>
+          <span className="text-gray-400">/</span>
+          <span className="text-gray-600">Faq's</span>
+        </div>
+      </section>
       {/* FAQ Section */}
       <section className="py-16 bg-white text-center px-4">
         <h2 className="text-3xl font-bold">
