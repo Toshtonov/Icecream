@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import Thankyouimg from "../images/thankyou-image.png.png"
 export default function ThankYou() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-pink-100 via-white to-purple-100 px-6">
@@ -10,7 +10,7 @@ export default function ThankYou() {
         {/* Smiley Icon */}
         <div className="mb-8">
           <img
-            src="src/images/thankyou-image.png.png"
+            src={Thankyouimg}
             alt="Thank You Illustration"
             className="max-w-xs sm:max-w-sm mx-auto drop-shadow-lg"
           />

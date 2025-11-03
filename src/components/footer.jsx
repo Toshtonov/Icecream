@@ -5,8 +5,10 @@ import {
   Facebook,
   Instagram,
 } from "lucide-react";
-import Deacarationimg from "../images/deacaration.png"
-import Logoimg from "../images/Group1(1).png"
+import { Link } from "react-router-dom";
+import Deacarationimg from "../images/deacaration.png";
+import Logoimg from "../images/Group1(1).png";
+
 export default function Footer() {
   return (
     <div className="bg-[#683292] relative text-[#CFB6E2]">
@@ -14,7 +16,9 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Logo */}
         <div className="flex flex-col items-start">
-          <img src={Logoimg} alt="Logo" className="w-32" />
+          <Link to={"/"}>
+            <img src={Logoimg} alt="Logo" className="w-32 cursor-pointer" />
+          </Link>
         </div>
 
         {/* Navigation */}
@@ -22,14 +26,35 @@ export default function Footer() {
           <h1 className="text-xl font-semibold mb-4">Navigation</h1>
           <div className="grid grid-cols-2 gap-4 text-sm">
             <div className="space-y-2">
-              <p>Home</p>
-              <p>About</p>
-              <p>Services</p>
+              <Link to={"/"} className="block hover:text-white transition">
+                Home
+              </Link>
+              <Link to={"/about"} className="block hover:text-white transition">
+                About
+              </Link>
+              <Link
+                to={"/services"}
+                className="block hover:text-white transition"
+              >
+                Services
+              </Link>
             </div>
             <div className="space-y-2">
-              <p>Blog</p>
-              <p>Shop</p>
-              <p>Contact</p>
+              <Link to={"/blog"} className="block hover:text-white transition">
+                Blog
+              </Link>
+              <Link
+                to={"/ShopPage"}
+                className="block hover:text-white transition"
+              >
+                Shop
+              </Link>
+              <Link
+                to={"/Contact"}
+                className="block hover:text-white transition"
+              >
+                Contact
+              </Link>
             </div>
           </div>
         </div>
@@ -78,9 +103,7 @@ export default function Footer() {
 
       {/* Bottom text */}
       <div className="py-4 text-center text-xs text-white">
-        <p>
-          Copyright © 2024 BlackRise Themes Inc. All rights reserved.
-        </p>
+        <p>Copyright © 2024 BlackRise Themes Inc. All rights reserved.</p>
       </div>
 
       {/* Background image (absolute) */}
